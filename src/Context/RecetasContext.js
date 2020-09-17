@@ -4,7 +4,7 @@ import Axios from "axios";
 export const RecetasContext = createContext();
 
 const RecetasProvider = (props) => {
-  const [recetas, guardarRecetas] = useState([]);
+  const [infoReceta, guardarRecetas] = useState([]);
   const [busqueda, buscarRecetas] = useState({
     nombre: "",
     categoria: ""
@@ -32,7 +32,7 @@ const RecetasProvider = (props) => {
   return (
     <RecetasContext.Provider
       value={{
-        recetas,
+        infoReceta,
         buscarRecetas,
         guardarConsultar
       }}>

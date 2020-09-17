@@ -1,16 +1,33 @@
 import React, { createContext, useEffect, useState } from 'react';
 import Axios from "axios";
 
-const ModalContext = createContext();
+export const ModalContext = createContext();
+
 
 const ModalProvider = (props) => {
 
     const [idreceta, guardarIdreceta] = useState(null);
+    const [infoReceta, guardarReceta] = useState({});
 
+    useEffect(() => {
+        const obtenerReceta = async () => {
+            if (!idreceta) return;
+            const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idreceta}`
+            const resultado = await Axios.get(url);
+            guardarReceta(resultado.data.drinks[0])
+            console.log(resultado.data.drinks[0])
+        }
+
+        obtenerReceta();
+
+    }, [idreceta])
     return (
         <ModalContext.Provider
             value={{
-                guardarIdreceta
+                infoReceta,
+                guardarIdreceta,
+                guardarReceta
+
             }}>
 
             {props.children}

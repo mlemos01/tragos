@@ -5,8 +5,9 @@ import "./index.css";
 import "./Bootstrap.min.css";
 import CategoriasProvider from "./Context/CategoriasContext";
 import RecetasProvider from "./Context/RecetasContext";
-import ListarRecetas from "./Components/ListarRecetas";
 import ModalProvider from "./Context/ModalContext";
+import ListarRecetas from "./Components/ListarRecetas";
+
 
 function App() {
   return (
