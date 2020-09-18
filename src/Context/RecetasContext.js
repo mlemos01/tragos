@@ -19,7 +19,7 @@ const RecetasProvider = (props) => {
       const obtenerRecetas = async () => {
         const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${nombre}&c=${categoria}`;
         const resultadoBusqueda = await Axios.get(url);
-        console.log(resultadoBusqueda)
+
         guardarRecetas(resultadoBusqueda.data.drinks);
 
 

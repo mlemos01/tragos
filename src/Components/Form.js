@@ -23,7 +23,6 @@ const Form = () => {
 
   const ejecutarBusqueda = (e) => {
     e.preventDefault();
-    console.log(busqueda)
     buscarRecetas(busqueda);
     guardarConsultar(true);
   };

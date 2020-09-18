@@ -15,7 +15,7 @@ const ModalProvider = (props) => {
             const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idreceta}`
             const resultado = await Axios.get(url);
             guardarReceta(resultado.data.drinks[0])
-            console.log(resultado.data.drinks[0])
+
         }
 
         obtenerReceta();
